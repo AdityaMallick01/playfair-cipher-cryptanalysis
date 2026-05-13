@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Playfair Cipher Security System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🔐 Playfair Cipher Security System</h1>
+
+        <div class="card">
+
+            <input type="text"
+                   id="key"
+                   placeholder="Enter Secret Key">
+
+            <textarea id="text"
+                      placeholder="Enter Plaintext or Ciphertext"></textarea>
+
+            <div class="buttons">
+
+                <button onclick="encryptText()">
+                    Encrypt
+                </button>
+
+                <button onclick="decryptText()">
+                    Decrypt
+                </button>
+
+                <button onclick="attackCipher()">
+                    Cryptanalysis
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="results">
+
+            <div class="result-card">
+
+                <h2>Row-wise Cipher</h2>
+
+                <p id="rowwise"></p>
+
+            </div>
+
+            <div class="result-card">
+
+                <h2>Column-wise Cipher</h2>
+
+                <p id="columnwise"></p>
+
+            </div>
+
+        </div>
+
+        <div class="matrix-section">
+
+            <div class="matrix-card">
+
+                <h2>Row-wise Matrix</h2>
+
+                <table id="rowMatrix"></table>
+
+            </div>
+
+            <div class="matrix-card">
+
+                <h2>Column-wise Matrix</h2>
+
+                <table id="columnMatrix"></table>
+
+            </div>
+
+        </div>
+
+        <div class="attack-card">
+
+            <h2>Cryptanalysis Result</h2>
+
+            <p id="attackResult"></p>
+
+        </div>
+
+        <div class="graph-card">
+
+            <h2>Frequency Analysis</h2>
+
+            <canvas id="freqChart"></canvas>
+
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static',
+    filename='script.js') }}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+
+</html>
